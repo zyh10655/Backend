@@ -13,16 +13,9 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   })
 
 const noteSchema = new mongoose.Schema({
-    author: String,
-    title: String,
-    journal: String,
-    year: String,
-    eprint: String,
-    eprinttype: String,
-    eprintclass: String,
-    pages: String,
-    month: String,
-    annote: String,
+  content: String,
+  date: Date,
+  important: Boolean,
 })
 
 noteSchema.set('toJSON', {
