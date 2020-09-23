@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+mongoose.set('useFindAndModify', false)
 const url = process.env.MONGODB_URI
 
 console.log('connecting to', url)
@@ -13,9 +13,16 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   })
 
 const noteSchema = new mongoose.Schema({
-  content: String,
-  date: Date,
-  important: Boolean,
+    author: String,
+    title: String,
+    journal: String,
+    year: String,
+    eprint: String,
+    eprinttype: String,
+    eprintclass: String,
+    pages: String,
+    month: String,
+    annote: String,
 })
 
 noteSchema.set('toJSON', {
